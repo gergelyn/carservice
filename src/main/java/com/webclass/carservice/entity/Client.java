@@ -20,4 +20,5 @@ public class Client {
     private String carType;
     private String licenseCode;
     private String issue;
+    private String progress = "Felvett munka";
 }
