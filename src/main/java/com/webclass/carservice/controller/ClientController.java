@@ -31,7 +31,8 @@ public class ClientController {
     public Client updateClient(@PathVariable Long id, @RequestBody Client newClient) {
         return clientRepository.findById(id)
                 .map(client -> {
-                    client.setName(newClient.getName());
+                    client.setFirstName(newClient.getFirstName());
+                    client.setLastName(newClient.getLastName());
                     client.setCarType(newClient.getCarType());
                     client.setLicenseCode(newClient.getLicenseCode());
                     client.setIssue(newClient.getIssue());
