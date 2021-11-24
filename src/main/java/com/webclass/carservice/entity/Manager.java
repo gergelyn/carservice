@@ -14,7 +14,7 @@ import java.util.Objects;
 @Entity
 
 public class Manager {
-    private static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
