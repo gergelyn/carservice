@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "client")
 public class Client {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,4 +21,6 @@ public class Client {
     private String licenseCode;
     private String issue;
     private String progress = "Felvett munka";
+
+    private @ManyToOne Manager manager;
 }
