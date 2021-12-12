@@ -1,6 +1,7 @@
 package com.webclass.carservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -13,6 +14,7 @@ import java.util.Objects;
 
 @Entity
 
+@NoArgsConstructor
 public class Manager {
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     @Id
@@ -28,8 +30,6 @@ public class Manager {
     public void setPassword(String password) {
         this.password = PASSWORD_ENCODER.encode(password);
     }
-
-    protected Manager() {}
 
     public Manager(String firstName, String lastName, String email, String password, String... roles) {
         this.firstName = firstName;
