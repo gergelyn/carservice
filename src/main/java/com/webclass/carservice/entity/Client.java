@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "client")
@@ -21,6 +20,15 @@ public class Client {
     private String licenseCode;
     private String issue;
     private String progress = "Felvett munka";
-
     private @ManyToOne Manager manager;
+    public Client(String firstName, String lastName, String carType, String licenseCode, String issue, Manager manager) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.carType = carType;
+        this.licenseCode = licenseCode;
+        this.issue = issue;
+        this.manager = manager;
+    }
+
+
 }
